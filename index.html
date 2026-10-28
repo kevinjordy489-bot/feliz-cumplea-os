@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Feliz Cumpleaños!</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap');
+
+    :root {
+      --bg: #0d0914;
+      --card-bg: rgba(23, 15, 38, 0.75);
+      --pink: #ff75c3;
+      --purple: #9a75ff;
+      --yellow: #fce38a;
+      --text: #f3effa;
+      --subtext: #b8b0ca;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at 50% 20%, #2a1b4e 0%, var(--bg) 80%);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text);
+      overflow-x: hidden;
+      padding: 1.5rem;
+    }
+
+    /* Destellos de fondo */
+    .glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      filter: blur(120px);
+      border-radius: 50%;
+      opacity: 0.35;
+      z-index: 0;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+      padding: 2.8rem 2.2rem;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.4rem 1.1rem;
+      background: rgba(255, 117, 195, 0.12);
+      border: 1px solid rgba(255, 117, 195, 0.3);
+      color: var(--pink);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.2rem;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #fff 30%, var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.8rem;
+    }
+
+    /* Ruta de vuelo */
+    .flight-path {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .city {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .city-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .city-desc {
+      font-size: 0.75rem;
+      color: var(--subtext);
+    }
+
+    .line-container {
+      flex-grow: 1;
+      margin: 0 1rem;
+      position: relative;
+    }
+
+    .dashed-line {
+      border-top: 2px dashed rgba(255, 255, 255, 0.2);
+      width: 100%;
+    }
+
+    .sparkle {
+      position: absolute;
+      top: -10px;
+      left: 0%;
+      font-size: 1.1rem;
+      animation: travel 3.5s infinite cubic-bezier(0.45, 0, 0.55, 1);
+    }
+
+    @keyframes travel {
+      0% { left: 0%; transform: rotate(0deg); }
+      50% { left: 85%; transform: rotate(15deg); }
+      100% { left: 0%; transform: rotate(0deg); }
+    }
+
+    .message {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--subtext);
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .message span.highlight {
+      color: var(--yellow);
+      font-weight: 600;
+    }
+
+    .footer-note {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--pink);
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow"></div>
+
+  <div class="card">
+    <span class="tag">✨ Un saludo especial</span>
+    <h1>¡Feliz Cumpleaños! 🎉</h1>
+
+    <div class="flight-path">
+      <div class="city">
+        <span class="city-name">Lima 🌊</span>
+        <span class="city-desc">Costa</span>
+      </div>
+      <div class="line-container">
+        <div class="dashed-line"></div>
+        <span class="sparkle">✈️💖</span>
+      </div>
+      <div class="city">
+        <span class="city-name">Tingo María 🌿</span>
+        <span class="city-desc">Selva</span>
+      </div>
+    </div>
+
+    <div class="message">
+      <p>Hay amistades a las que la distancia no les resta ni un poquito de cariño. Aunque nos separen los mapas entre la costa y la selva, hoy celebro tu vida desde aquí.</p>
+      <br>
+      <p>Deseo que pases un día hermoso, lleno de la <span class="highlight">energía tan bonita</span> de Tingo. ¡Que este nuevo año te traiga proyectos increíbles, sonrisas y momentos inolvidables!</p>
+    </div>
+
+    <p class="footer-note">¡Te mando un abrazo enorme hasta allá! 🎂✨</p>
+  </div>
+
+</body>
+</html>
